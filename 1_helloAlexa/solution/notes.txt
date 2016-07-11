@@ -1,0 +1,15 @@
+1. install nvm
+2. install npm
+3. initialize a new npm package
+4. download the 'AlexaSkill.js' class from amazon's example
+      wget https://raw.githubusercontent.com/amzn/alexa-skills-kit-js/master/samples/scoreKeeper/src/AlexaSkill.js
+5. subclass the AlexaSkill.js class
+6. sign in to dev console (students should create a amazon AWS account and
+activate it before the class)
+7. AWS Lambda -> set up new instance
+8. add alexa event source
+9. implement intentHandler prototype with handlers
+10. implement eventHandler
+11. upload manually to AWS Lambda as a zip
+12. ASK developer console -> setup utterance and intent schema
+13. add ARN from Lambda to ASK developer console

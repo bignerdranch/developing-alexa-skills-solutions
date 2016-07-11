@@ -1,0 +1,13 @@
+{
+  "name": "madlibbuilder",
+  "version": "1.0.0",
+  "description": "build mad libs!",
+  "main": "index.js",
+  "author": "josh skeen",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.2.47",
+    "dynasty": "^0.2.4",
+    "lodash": "^4.3.0"
+  }
+}

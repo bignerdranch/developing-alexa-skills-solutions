@@ -1,0 +1,20 @@
+{
+  "name": "airportinfo",
+  "version": "1.0.0",
+  "description": "track FAA Airport status",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "josh skeen",
+  "license": "ISC",
+  "dependencies": {
+    "alexa-app": "^2.3.4",
+    "lodash": "^4.13.1",
+    "mocha": "^2.5.3",
+    "request-promise": "^2.0.1"
+  },
+  "devDependencies": {
+    "alexa-app": "^2.3.4"
+  }
+}
