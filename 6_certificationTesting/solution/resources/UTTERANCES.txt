@@ -1,0 +1,81 @@
+delayinfo	 {AIRPORTCODE}
+delayinfo	flight {AIRPORTCODE}
+delayinfo	airport {AIRPORTCODE}
+delayinfo	 delay {AIRPORTCODE}
+delayinfo	flight delay {AIRPORTCODE}
+delayinfo	airport delay {AIRPORTCODE}
+delayinfo	 status {AIRPORTCODE}
+delayinfo	flight status {AIRPORTCODE}
+delayinfo	airport status {AIRPORTCODE}
+delayinfo	 info {AIRPORTCODE}
+delayinfo	flight info {AIRPORTCODE}
+delayinfo	airport info {AIRPORTCODE}
+delayinfo	 delay info {AIRPORTCODE}
+delayinfo	flight delay info {AIRPORTCODE}
+delayinfo	airport delay info {AIRPORTCODE}
+delayinfo	 status info {AIRPORTCODE}
+delayinfo	flight status info {AIRPORTCODE}
+delayinfo	airport status info {AIRPORTCODE}
+delayinfo	 information {AIRPORTCODE}
+delayinfo	flight information {AIRPORTCODE}
+delayinfo	airport information {AIRPORTCODE}
+delayinfo	 delay information {AIRPORTCODE}
+delayinfo	flight delay information {AIRPORTCODE}
+delayinfo	airport delay information {AIRPORTCODE}
+delayinfo	 status information {AIRPORTCODE}
+delayinfo	flight status information {AIRPORTCODE}
+delayinfo	airport status information {AIRPORTCODE}
+delayinfo	 for {AIRPORTCODE}
+delayinfo	flight for {AIRPORTCODE}
+delayinfo	airport for {AIRPORTCODE}
+delayinfo	 delay for {AIRPORTCODE}
+delayinfo	flight delay for {AIRPORTCODE}
+delayinfo	airport delay for {AIRPORTCODE}
+delayinfo	 status for {AIRPORTCODE}
+delayinfo	flight status for {AIRPORTCODE}
+delayinfo	airport status for {AIRPORTCODE}
+delayinfo	 info for {AIRPORTCODE}
+delayinfo	flight info for {AIRPORTCODE}
+delayinfo	airport info for {AIRPORTCODE}
+delayinfo	 delay info for {AIRPORTCODE}
+delayinfo	flight delay info for {AIRPORTCODE}
+delayinfo	airport delay info for {AIRPORTCODE}
+delayinfo	 status info for {AIRPORTCODE}
+delayinfo	flight status info for {AIRPORTCODE}
+delayinfo	airport status info for {AIRPORTCODE}
+delayinfo	 information for {AIRPORTCODE}
+delayinfo	flight information for {AIRPORTCODE}
+delayinfo	airport information for {AIRPORTCODE}
+delayinfo	 delay information for {AIRPORTCODE}
+delayinfo	flight delay information for {AIRPORTCODE}
+delayinfo	airport delay information for {AIRPORTCODE}
+delayinfo	 status information for {AIRPORTCODE}
+delayinfo	flight status information for {AIRPORTCODE}
+delayinfo	airport status information for {AIRPORTCODE}
+delayinfo	 at {AIRPORTCODE}
+delayinfo	flight at {AIRPORTCODE}
+delayinfo	airport at {AIRPORTCODE}
+delayinfo	 delay at {AIRPORTCODE}
+delayinfo	flight delay at {AIRPORTCODE}
+delayinfo	airport delay at {AIRPORTCODE}
+delayinfo	 status at {AIRPORTCODE}
+delayinfo	flight status at {AIRPORTCODE}
+delayinfo	airport status at {AIRPORTCODE}
+delayinfo	 info at {AIRPORTCODE}
+delayinfo	flight info at {AIRPORTCODE}
+delayinfo	airport info at {AIRPORTCODE}
+delayinfo	 delay info at {AIRPORTCODE}
+delayinfo	flight delay info at {AIRPORTCODE}
+delayinfo	airport delay info at {AIRPORTCODE}
+delayinfo	 status info at {AIRPORTCODE}
+delayinfo	flight status info at {AIRPORTCODE}
+delayinfo	airport status info at {AIRPORTCODE}
+delayinfo	 information at {AIRPORTCODE}
+delayinfo	flight information at {AIRPORTCODE}
+delayinfo	airport information at {AIRPORTCODE}
+delayinfo	 delay information at {AIRPORTCODE}
+delayinfo	flight delay information at {AIRPORTCODE}
+delayinfo	airport delay information at {AIRPORTCODE}
+delayinfo	 status information at {AIRPORTCODE}
+delayinfo	flight status information at {AIRPORTCODE}
+delayinfo	airport status information at {AIRPORTCODE}

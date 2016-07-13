@@ -1,0 +1,25 @@
+{
+  "intents": [
+    {
+      "intent": "AMAZON.HelpIntent",
+      "slots": []
+    },
+    {
+      "intent": "AMAZON.StopIntent",
+      "slots": []
+    },
+    {
+      "intent": "AMAZON.CancelIntent",
+      "slots": []
+    },
+    {
+      "intent": "delayinfo",
+      "slots": [
+        {
+          "name": "AIRPORTCODE",
+          "type": "FAACODES"
+        }
+      ]
+    }
+  ]
+}
