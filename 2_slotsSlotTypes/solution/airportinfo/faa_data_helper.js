@@ -21,7 +21,7 @@ FAADataHelper.prototype.formatAirportStatus = function(aiportStatusObject) {
       'The average delay time is ${delay_time}.');
     return template({
       airport: aiportStatusObject.name,
-      delay_time: '39 minutes'
+      delay_time: aiportStatusObject.status.avgDelay
     });
   } else {
     //no delay

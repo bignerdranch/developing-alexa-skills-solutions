@@ -9,7 +9,7 @@
   "author": "josh skeen",
   "license": "ISC",
   "dependencies": {
-    "alexa-app": "^2.3.2",
+    "alexa-app": "^2.3.4",
     "lodash": "^4.3.0",
     "request-promise": "^2.0.1",
     "twit": "^2.2.3",

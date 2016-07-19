@@ -20,7 +20,7 @@ skillService.intent("AMAZON.CancelIntent", {}, cancelIntentFunction);
 skillService.intent("AMAZON.StopIntent", {}, cancelIntentFunction);
 
 skillService.launch(function(request, response) {
-  var prompt = "Welcome to Madlibbuilder."
+  var prompt = "Welcome to Madlibs."
     + "To create a new madlib, say create a madlib";
   response.say(prompt).shouldEndSession(false);
 });
@@ -44,7 +44,6 @@ skillService.intent("madlibIntent", {
   "utterances": ["{new|start|create|begin|build} {|a|the} madlib", "{-|StepValue}"]
 },
   function(request, response) {
-    //check to see if a madlibbuilder exists in the request.
     var stepValue = request.slot("StepValue");
     var madlibHelper = getMadlibHelper(request);
     madlibHelper.started = true;
@@ -53,9 +52,8 @@ skillService.intent("madlibIntent", {
     }
     if (madlibHelper.completed()) {
       var completedMadlib = madlibHelper.buildMadlib();
-      console.log("madlib completed! Result: " + completedMadlib);
       response.card(madlibHelper.currentMadlib().title, completedMadlib);
-      response.say("The madlib is complete! I will now read it to you. " + madlibHelper.buildMadlib()),
+      response.say("The madlib is complete! I will now read it to you. " + completedMadlib);
       response.shouldEndSession(true);
     } else {
       if (stepValue !== undefined) {

@@ -2,8 +2,8 @@
 module.change_code = 1;
 var _ = require('lodash');
 var Twitter = require('twit');
-var CONSUMER_KEY = 'tveGStP0WONtnGJ6h7ledvMto';
-var CONSUMER_SECRET = 'saBxYXWzvIVqAou93JW94MDOCyssOjNRHv5THs2EzkenEoUykw';
+var CONSUMER_KEY = 'KEY GOES HERE!!!!';
+var CONSUMER_SECRET = 'SECRET GOES HERE!!!!';
 function TwitterHelper(accessToken) {
   this.accessToken = accessToken.split(',');
   this.client = new Twitter({

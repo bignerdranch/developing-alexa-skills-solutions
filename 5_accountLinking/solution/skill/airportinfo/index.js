@@ -5,10 +5,6 @@ var Alexa = require('alexa-app');
 var skill = new Alexa.app('airportinfo');
 var FAADataHelper = require('./faa_data_helper');
 var TwitterHelper = require('./twitter_helper');
-var utterancesMethod = skill.utterances;
-skill.utterances = function() {
-  return utterancesMethod().replace(/\{\-\|/g, '{');
-};
 
 skill.launch(function(request, response) {
   var prompt = 'For delay information, tell me an Airport code.';
@@ -44,6 +40,7 @@ skill.intent('tweetAirportStatusIntent', {
           return twitterHelper.postTweet(status);
         }).then(
           function(result) {
+            console.log(result);
             response.say('I\'ve posted the status to your timeline').send();
           }
         );
@@ -80,6 +77,4 @@ skill.intent('airportInfoIntent', {
     }
   }
 );
-//hack to support custom utterances in utterance expansion string
-console.log(skill.utterances().replace(/\{\-\|/g, '{'));
 module.exports = skill;

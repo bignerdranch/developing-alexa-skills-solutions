@@ -9,7 +9,7 @@ function MadlibHelper (obj) {
   this.madlibs = [
     {
       title: 'A Cold November Day',
-      template: 'It was a ${adjective_1}, cold November day. I awoke to the ${adjective_2} smell of ${type_of_bird} roasting in the ${room_in_house} downstairs. I ${verb_past_tense} down the stairs to see if I could help ${verb} with dinner. My friend said, "See if ${relative_name}" needs a fresh ${noun_1}." So I carried a tray of glasses full of ${a_liquid} into the ${verb_ending_in_ing} room. When I got there, I couldn\'t believe my ${part_of_body_plural}! There were ${plural_noun} ${verb_ending_in_ing_2} on the ${noun_2}!',
+      template: 'It was a ${adjective_1}, cold November day. I awoke to the ${adjective_2} smell of ${type_of_bird} roasting in the ${room_in_house} downstairs. I ${verb_past_tense} down the stairs to see if I could help ${verb} with dinner. My friend said, "See if ${relative_name}" needs a fresh ${noun_1}." So I carried a tray of glasses full of ${a_liquid} into the ${verb_ending_in_ing} room.',
       steps: [
         {
           value: null,
@@ -70,30 +70,6 @@ function MadlibHelper (obj) {
           template_key: 'verb_ending_in_ing',
           prompt: 'a verb ending in ing',
           help: 'Speak a verb ending in ing to add it to the madlib. Running, living, or singing are all examples. What verb ending in ing do you want to add?'
-        },
-        {
-          value: null,
-          template_key: 'part_of_body_plural',
-          prompt: 'a plural part of the body',
-          help: 'Speak a plural part of the body to add it to the madlib. For example, fingers, eyes, or ears. What plural part of the body do you want to add?'
-        },
-        {
-          value: null,
-          template_key: 'plural_noun',
-          prompt: 'a plural noun',
-          help: 'Speak a plural noun to add it to the madlib. What plural noun do you want to add?'
-        },
-        {
-          value: null,
-          template_key: 'verb_ending_in_ing_2',
-          prompt: 'a verb ending in ing',
-          help: 'Speak a verb ending in ing to add it to the madlib. Running, living, or singing are all examples. What verb ending in ing do you want to add?'
-        },
-        {
-          value: null,
-          template_key: 'noun_2',
-          prompt: 'a noun',
-          help: 'Speak a noun to add it to the madlib. A noun used to identify any of a class of people, places, or things. For example, pencil, jelly bean, and Bill Clinton are all nouns. What noun would you like?'
         }
       ]
     }
