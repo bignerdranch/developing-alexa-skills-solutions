@@ -1,15 +1,3 @@
-loadMadlibIntent	load madlib
-loadMadlibIntent	resume madlib
-loadMadlibIntent	load a madlib
-loadMadlibIntent	resume a madlib
-loadMadlibIntent	load the madlib
-loadMadlibIntent	resume the madlib
-loadMadlibIntent	load last madlib
-loadMadlibIntent	resume last madlib
-loadMadlibIntent	load a last madlib
-loadMadlibIntent	resume a last madlib
-loadMadlibIntent	load the last madlib
-loadMadlibIntent	resume the last madlib
 madlibIntent	new madlib
 madlibIntent	start madlib
 madlibIntent	create madlib
@@ -25,8 +13,4 @@ madlibIntent	start the madlib
 madlibIntent	create the madlib
 madlibIntent	begin the madlib
 madlibIntent	build the madlib
-madlibIntent	{StepValue}
-saveMadlibIntent	save madlib
-saveMadlibIntent	save a madlib
-saveMadlibIntent	save the madlib
-saveMadlibIntent	save my madlib
+madlibIntent	{STEPVALUE}

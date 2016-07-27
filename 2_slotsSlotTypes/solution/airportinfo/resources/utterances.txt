@@ -1,15 +1,3 @@
-tweetAirportStatusIntent	tweet {AIRPORTCODE}
-tweetAirportStatusIntent	tweet delay {AIRPORTCODE}
-tweetAirportStatusIntent	tweet status {AIRPORTCODE}
-tweetAirportStatusIntent	tweet info {AIRPORTCODE}
-tweetAirportStatusIntent	tweet delay info {AIRPORTCODE}
-tweetAirportStatusIntent	tweet status info {AIRPORTCODE}
-tweetAirportStatusIntent	tweet for {AIRPORTCODE}
-tweetAirportStatusIntent	tweet delay for {AIRPORTCODE}
-tweetAirportStatusIntent	tweet status for {AIRPORTCODE}
-tweetAirportStatusIntent	tweet info for {AIRPORTCODE}
-tweetAirportStatusIntent	tweet delay info for {AIRPORTCODE}
-tweetAirportStatusIntent	tweet status info for {AIRPORTCODE}
 airportInfoIntent	{AIRPORTCODE}
 airportInfoIntent	flight {AIRPORTCODE}
 airportInfoIntent	airport {AIRPORTCODE}
