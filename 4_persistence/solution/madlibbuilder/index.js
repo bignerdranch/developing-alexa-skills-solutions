@@ -1,11 +1,11 @@
-"use strict";
+'use strict';
 module.change_code = 1;
-var _ = require("lodash");
-var Skill = require("alexa-app");
-var MADLIB_BUILDER_SESSION_KEY = "MADLIB_BUILDER_SESSION_KEY";
-var skillService = new Skill.app("madlibbuilder");
-var MadlibHelper = require("./madlib_helper");
-var DatabaseHelper = require("./database_helper");
+var _ = require('lodash');
+var Skill = require('alexa-app');
+var MADLIB_BUILDER_SESSION_KEY = 'MADLIB_BUILDER_SESSION_KEY';
+var skillService = new Skill.app('madlibbuilder');
+var MadlibHelper = require('./madlib_helper');
+var DatabaseHelper = require('./database_helper');
 var databaseHelper = new DatabaseHelper();
 skillService.pre = function(request, response, type) {
   databaseHelper.createMadlibsTable();
@@ -17,18 +17,17 @@ var getMadlibHelper = function(madlibHelperData) {
   return new MadlibHelper(madlibHelperData);
 };
 var cancelIntentFunction = function(req, res) {
-  res.say("Goodbye!").shouldEndSession(true);
+  res.say('Goodbye!').shouldEndSession(true);
 };
 
-skillService.intent("AMAZON.CancelIntent", {}, cancelIntentFunction);
-skillService.intent("AMAZON.StopIntent", {}, cancelIntentFunction);
-
+skillService.intent('AMAZON.CancelIntent', {}, cancelIntentFunction);
+skillService.intent('AMAZON.StopIntent', {}, cancelIntentFunction);
 var getMadlibHelperFromRequest = function(request) {
   var madlibHelperData = request.session(MADLIB_BUILDER_SESSION_KEY);
   return getMadlibHelper(madlibHelperData);
 };
 var madlibIntentFunction = function(madlibHelper, request, response) {
-  var stepValue = request.slot("StepValue");
+  var stepValue = request.slot('STEPVALUE');
   madlibHelper.started = true;
   if (stepValue !== undefined) {
     madlibHelper.getStep().value = stepValue;
@@ -42,8 +41,8 @@ var madlibIntentFunction = function(madlibHelper, request, response) {
     if (stepValue !== undefined) {
       madlibHelper.currentStep++;
     }
-    response.say("Give me " + madlibHelper.getPrompt());
-    response.reprompt("I didn't hear anything. Give me " + madlibHelper.getPrompt() + " to continue.");
+    response.say('Give me ' + madlibHelper.getPrompt());
+    response.reprompt('I didn\'t hear anything. Give me ' + madlibHelper.getPrompt() + ' to continue.');
     response.shouldEndSession(false);
   }
   response.session(MADLIB_BUILDER_SESSION_KEY, madlibHelper);
@@ -51,25 +50,25 @@ var madlibIntentFunction = function(madlibHelper, request, response) {
 };
 
 skillService.launch(function(request, response) {
-  var prompt = "Welcome to Madlibbuilder." +
-    "To create a new madlib, say create a madlib";
+  var prompt = 'Welcome to Madlibbuilder.' +
+    'To create a new madlib, say create a madlib';
   response.say(prompt).shouldEndSession(false);
 });
 
-skillService.intent("AMAZON.HelpIntent", {},
+skillService.intent('AMAZON.HelpIntent', {},
   function(request, response) {
     var madlibHelper = getMadlibHelper(request);
-    var help = "Welcome to madlibbuilder." +
-      "To start a new madlib, say create a madlib." +
-      "You can also say stop or cancel to exit.";
+    var help = 'Welcome to madlibbuilder.' +
+      'To start a new madlib, say create a madlib.' +
+      'You can also say stop or cancel to exit.';
     if (madlibHelper.started) {
       help = madlibHelper.getStep().help;
     }
     response.say(help).shouldEndSession(false);
   });
 
-skillService.intent("loadMadlibIntent", {
-  "utterances": ["{load|resume} {|a|the} {|last} madlib"]
+skillService.intent('loadMadlibIntent', {
+  'utterances': ['{load|resume} {|a|the} {|last} madlib']
 },
   function(request, response) {
     var userId = request.userId;
@@ -79,12 +78,12 @@ skillService.intent("loadMadlibIntent", {
     return false;
   });
 
-skillService.intent("madlibIntent", {
-  "slots": {
-    "StepValue": "STEPVALUES"
+skillService.intent('madlibIntent', {
+  'slots': {
+    'STEPVALUE': 'STEPVALUES'
   },
-  "utterances": ["{new|start|create|begin|build} {|a|the} madlib",
-    "{-|StepValue}"
+  'utterances': ['{new|start|create|begin|build} {|a|the} madlib',
+    '{-|STEPVALUE}'
   ]
 },
   function(request, response) {
@@ -93,8 +92,8 @@ skillService.intent("madlibIntent", {
   }
 );
 
-skillService.intent("saveMadlibIntent", {
-  "utterances": ["{save} {|a|the|my} madlib"]
+skillService.intent('saveMadlibIntent', {
+  'utterances': ['{save} {|a|the|my} madlib']
 },
   function(request, response) {
     var userId = request.userId;
@@ -104,7 +103,7 @@ skillService.intent("saveMadlibIntent", {
         return result;
       }).catch(function(error) {});
     response.say(
-      "Your madlib progress has been saved."
+      'Your madlib progress has been saved.'
     );
     response.shouldEndSession(true).send();
     return false;

@@ -1,0 +1,22 @@
+{
+  "intents": [
+    {
+      "intent": "tweetAirportStatusIntent",
+      "slots": [
+        {
+          "name": "AIRPORTCODE",
+          "type": "FAACODES"
+        }
+      ]
+    },
+    {
+      "intent": "airportInfoIntent",
+      "slots": [
+        {
+          "name": "AIRPORTCODE",
+          "type": "FAACODES"
+        }
+      ]
+    }
+  ]
+}

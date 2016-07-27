@@ -7,8 +7,7 @@
   "license": "ISC",
   "dependencies": {
     "alexa-app": "^2.3.4",
-    "aws-sdk": "^2.2.47",
-    "dynasty": "^0.2.4",
+    "dynasty": "0.2.4",
     "lodash": "^4.3.0"
   }
 }

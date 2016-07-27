@@ -10,11 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "alexa-app": "^2.3.4",
-    "lodash": "^4.13.1",
-    "mocha": "^2.5.3",
-    "request-promise": "^2.0.1"
-  },
-  "devDependencies": {
-    "alexa-app": "^2.3.4"
+    "lodash": "^4.13.1"
   }
 }

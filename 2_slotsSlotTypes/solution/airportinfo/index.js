@@ -11,16 +11,19 @@ skill.launch(function(req, res) {
 });
 
 skill.intent('airportInfoIntent', {
-  'slots': {
-    'AirportCode': 'FAACODES'
+    'slots': {
+      'AIRPORTCODE': 'FAACODES'
+    },
+    'utterances': [
+      '{|flight|airport} {|delay|status} {|info} {|for} {-|AIRPORTCODE}'
+    ]
   },
-  'utterances': ['{|flight|airport} {|delay|status} {|info} {|for} {-|AirportCode}']
-},
   function(req, res) {
-    var airportCode = req.slot('AirportCode');
+    var airportCode = req.slot('AIRPORTCODE');
     var reprompt = 'Tell me an airport code to get delay information.';
     if (_.isEmpty(airportCode)) {
-      var prompt = 'I didn\'t hear an airport code. Tell me an airport code.';
+      var prompt =
+        'I didn\'t hear an airport code. Tell me an airport code.';
       res.say(prompt).reprompt(reprompt).shouldEndSession(false);
       return true;
     } else {
@@ -31,7 +34,8 @@ skill.intent('airportInfoIntent', {
         res.say(faaHelper.formatAirportStatus(airportStatus)).send();
       }).catch(function(err) {
         console.log(err.statusCode);
-        var prompt = 'I didn\'t have data for an airport code of ' + airportCode;
+        var prompt = 'I didn\'t have data for an airport code of ' +
+          airportCode;
         res.say(prompt).reprompt(reprompt).shouldEndSession(false).send();
       });
       return false;

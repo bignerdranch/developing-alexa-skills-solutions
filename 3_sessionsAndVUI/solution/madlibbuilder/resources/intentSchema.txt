@@ -1,0 +1,25 @@
+{
+  "intents": [
+    {
+      "intent": "AMAZON.CancelIntent",
+      "slots": []
+    },
+    {
+      "intent": "AMAZON.StopIntent",
+      "slots": []
+    },
+    {
+      "intent": "AMAZON.HelpIntent",
+      "slots": []
+    },
+    {
+      "intent": "madlibIntent",
+      "slots": [
+        {
+          "name": "STEPVALUE",
+          "type": "STEPVALUES"
+        }
+      ]
+    }
+  ]
+}

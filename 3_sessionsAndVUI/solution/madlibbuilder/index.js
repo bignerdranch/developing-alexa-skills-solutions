@@ -39,12 +39,12 @@ skillService.intent("AMAZON.HelpIntent", {},
 
 skillService.intent("madlibIntent", {
   "slots": {
-    "StepValue": "StepValues"
+    "STEPVALUE": "STEPVALUES"
   },
-  "utterances": ["{new|start|create|begin|build} {|a|the} madlib", "{-|StepValue}"]
+  "utterances": ["{new|start|create|begin|build} {|a|the} madlib", "{-|STEPVALUE}"]
 },
   function(request, response) {
-    var stepValue = request.slot("StepValue");
+    var stepValue = request.slot("STEPVALUE");
     var madlibHelper = getMadlibHelper(request);
     madlibHelper.started = true;
     if (stepValue !== undefined) {

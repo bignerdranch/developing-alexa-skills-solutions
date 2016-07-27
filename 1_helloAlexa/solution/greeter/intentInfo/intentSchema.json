@@ -1,7 +1,0 @@
-{
-  "intents": [
-    {
-      "intent": "HelloWorldIntent"
-    }
-  ]
-}

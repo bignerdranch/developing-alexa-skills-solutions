@@ -1,0 +1,48 @@
+tweetAirportStatusIntent	tweet {AIRPORTCODE}
+tweetAirportStatusIntent	tweet delay {AIRPORTCODE}
+tweetAirportStatusIntent	tweet status {AIRPORTCODE}
+tweetAirportStatusIntent	tweet info {AIRPORTCODE}
+tweetAirportStatusIntent	tweet delay info {AIRPORTCODE}
+tweetAirportStatusIntent	tweet status info {AIRPORTCODE}
+tweetAirportStatusIntent	tweet for {AIRPORTCODE}
+tweetAirportStatusIntent	tweet delay for {AIRPORTCODE}
+tweetAirportStatusIntent	tweet status for {AIRPORTCODE}
+tweetAirportStatusIntent	tweet info for {AIRPORTCODE}
+tweetAirportStatusIntent	tweet delay info for {AIRPORTCODE}
+tweetAirportStatusIntent	tweet status info for {AIRPORTCODE}
+airportInfoIntent	{AIRPORTCODE}
+airportInfoIntent	flight {AIRPORTCODE}
+airportInfoIntent	airport {AIRPORTCODE}
+airportInfoIntent	delay {AIRPORTCODE}
+airportInfoIntent	flight delay {AIRPORTCODE}
+airportInfoIntent	airport delay {AIRPORTCODE}
+airportInfoIntent	status {AIRPORTCODE}
+airportInfoIntent	flight status {AIRPORTCODE}
+airportInfoIntent	airport status {AIRPORTCODE}
+airportInfoIntent	info {AIRPORTCODE}
+airportInfoIntent	flight info {AIRPORTCODE}
+airportInfoIntent	airport info {AIRPORTCODE}
+airportInfoIntent	delay info {AIRPORTCODE}
+airportInfoIntent	flight delay info {AIRPORTCODE}
+airportInfoIntent	airport delay info {AIRPORTCODE}
+airportInfoIntent	status info {AIRPORTCODE}
+airportInfoIntent	flight status info {AIRPORTCODE}
+airportInfoIntent	airport status info {AIRPORTCODE}
+airportInfoIntent	for {AIRPORTCODE}
+airportInfoIntent	flight for {AIRPORTCODE}
+airportInfoIntent	airport for {AIRPORTCODE}
+airportInfoIntent	delay for {AIRPORTCODE}
+airportInfoIntent	flight delay for {AIRPORTCODE}
+airportInfoIntent	airport delay for {AIRPORTCODE}
+airportInfoIntent	status for {AIRPORTCODE}
+airportInfoIntent	flight status for {AIRPORTCODE}
+airportInfoIntent	airport status for {AIRPORTCODE}
+airportInfoIntent	info for {AIRPORTCODE}
+airportInfoIntent	flight info for {AIRPORTCODE}
+airportInfoIntent	airport info for {AIRPORTCODE}
+airportInfoIntent	delay info for {AIRPORTCODE}
+airportInfoIntent	flight delay info for {AIRPORTCODE}
+airportInfoIntent	airport delay info for {AIRPORTCODE}
+airportInfoIntent	status info for {AIRPORTCODE}
+airportInfoIntent	flight status info for {AIRPORTCODE}
+airportInfoIntent	airport status info for {AIRPORTCODE}
