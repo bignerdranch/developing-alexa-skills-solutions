@@ -1,0 +1,36 @@
+lecture 1
+
+slide 1:
+a skill is comprised of 2 basic elements: a skill service, and a skill interface.
+a skill service is hosted in a server container.
+a skill interface is configured on amazon's skill developer portal.
+we will look at each part in detail in the Slide deck.
+
+slide 2:
+a skill service can be implemented in any language that can be hosted on an https server.
+in the class we will implement it in node.js running on aws lambda, but any language could be used.
+the skill service will handle requests from the skill interface.
+this can be implemented in any language that can be hosted on https.
+
+slide 3:
+For the skill service we will specifically be using aws lambda and node.js.
+Lambda is amazon's cloud hosting platform for node, a part of Amazon Web Services.
+Node.js is server-side javascript that allows writing code that runs on AWS Lambda.
+
+slide 4:
+A skill implements event handlers.
+These event handlers define how the skill will behave when the user triggers certain events.
+In this example, we define an eventHandlers for the "onLaunch" event.
+The onLaunchEvent is sent to the skill service when the skill first launches.
+
+slide 5:
+Skill events are received by the skill service backend and are emitted by the skill interface in response to certain phrases a user speaks.
+Here you see a definition for onLaunch, onSessionStarted, and onIntent - all events that are sent from the skill interface to the skill service.
+
+slide 6:
+The Skill interface is the second part of creating a skill.
+It is configured via the Amazon skill configuration console.
+We will unpack what is meant by utterances, intent schema, and slot types
+
+slide 7:
+This screenshot shows the interface for defining the skill name which is where the skills interface is registered for the rest of the application.

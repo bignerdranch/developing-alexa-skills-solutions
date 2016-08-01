@@ -1,0 +1,62 @@
+lecture 4
+
+slide 1
+Students will build the Airport Info skill in this chapter which will make requests to a JSON API and speak the results.
+They will use an utterances definition as before, but will add a slot to their utterance definition to pass data into the service.
+
+slide 2
+In this chapter we will implement persistence for the Madlib Skill. 
+
+The exercise will use DynamoDB for the persistence layer.
+DynamoDB is a NoSQL style key/value database store that allows you to write to the database.
+NoSQL means to query for our object we will not use joins or map objects to table rows. Instead, 
+we will provide a key and the object we want to store. 
+
+"No Schema" means the data that is tied to the key for each row does not need individual definitions for each column of the data that is written. 
+
+slide 3
+Lightning Fast - Dynamodb is very high performance - it is typical for read and write times to be single millisecond.
+Compare this to some of the more traditional databases that can take 20 - 30 ms per read or write. 
+
+slide 4
+Here, we name the table we will be creating and reading/writing madlib data to and from.
+We will use the Dynasty library to talk to DynamoDB, an open source library for dealing with DynamoDB.
+Notice, there is no configuration required for the DynamoDB instance. 
+This is because we will configure the environment to have the local connection point to the AWS Lambda when we deploy. 
+We will set up local testing later.
+
+slide 5
+Here, we create a new table on DynamoDB if the "describe" request fails - meaning it does not exist yet.
+
+slide 6
+Notice the key_schema attribute. This defines the value we will use to look up our madlibs with. 
+We'll see actually using the userId in the next slide.
+
+slide 7
+We will use the "pre" method on the alexa-app library which is called before an intent handler is invoked. 
+This ensures the database is created before we try to read or write from it. 
+
+slide 8
+Finally, we add methods for storing and reading the madlib to the table we created. 
+The table is keyed on a userId, which will be passed in from the request object on the skill service. 
+The userId represents the Alexa Skills Account the skill is associated with.
+
+slide 9
+In this slide we use the database_helper.js class to store the madlib's data. The madlib object
+must be stringified to properly serialize it to the database - failing to do so would result in subarrays and subobjects not being saved. 
+
+slide 10
+The user id is pulled from the request object that is sent from the skill interface. This is a unique id that identifies the account the request was made from - the account that the Alexa Skills Kit device is registered to. 
+This means the database will store data unique to each user id. 
+
+slide 11
+The data was written to the cloud and is browsable from the AWS Dynamodb GUI available under your AWS account. 
+You can see that the data is keyed on the userId for the account as specified when we created the table.
+
+slide 12
+To load the data, you use the `readMadlibData(userId)` method from the `DatabaseHelper`, passing `userId` as an argument from the request so that the data can be retrieved. 
+You then re-inflate the state of the madlib helper object from the data and call madlibIntentFunction with the madlibhelper object,
+which will pull the current step and read the prompt from the madlib steps object. 
+
+The data was written to the cloud and is browsable from the AWS Dynamodb GUI available under your AWS account. 
+You can see that the data is keyed on the userId for the account as specified when we created the table.

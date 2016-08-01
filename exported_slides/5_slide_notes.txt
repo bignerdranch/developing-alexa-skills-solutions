@@ -1,0 +1,38 @@
+lecture 5
+
+slide 1:
+Here we show the ultimate goal of the account linking exercise - enabling the Airport Info skill we built earlier to make Tweets to a user's timeline on their behalf.  
+
+slide 2: 
+Once the command completes, the tweet is shown on the user's own timeline. This is the idea behind account linking - linking an account on a seperate server with an alexa skill. 
+
+slide 3:
+      The first step in linking an account is enabling the option in the skill interface on the Configuration Page under account linking . This generates a special redirect url that will be used in an exchange between your skill, a client service, and an authentication service we will understand more deeply in the next slides. 
+        You also add the Authorization URL to the skill interface configuration. This points to the client service.
+
+slide 4:
+            Oauth is a leading authentication standard on the web we will use to grant access to making a tweet from the skill. 
+            Here we have a diagram showing the oauth flow we will use with the skill against twitter's authentication service. 
+            The configuration we did in the skill interface account linking section is where we got the urls shown on the page. The heroku app, the first leg of the auth flow, is the client service that makes a request to twitter's server to get a request token. With the request token, twitter displays a login page.  
+            Once the login completes, twitter redirects to the client server, and then hands the token to the pitangui.amazon.com endpoint where it is saved on the account. 
+            This flow only happens when the user initially installs the skill, and doesnt need to be performed again once this completes.
+
+slide 5:
+Once account linking is enabled in the skill interface, when a user enables the skill on their account they are redirected to an external auth url - where authentication for the particular service can take place. This was configured in the account linking section in the skill interface. This is part of the typical oauth authentication workflow you have seen in many places on the internet. 
+
+slide 6:
+The user will authenticate with their credentials on twitter's server, and then there will be a redirection to the oauth server with a token representing the user's authentication with twitter. Note that credentials for username and password are not shared with the skill, instead a access token is granted.
+
+slide 7:
+Finally after the authentication succeeds, twitter redirects to the client server, where a final redirect to the alexa companion app occurs. The token that was generaated is handed to amazon, where it can now be used within the skill. 
+
+slide 8:
+Here we have a new intent handler that we define for making a tweet. 
+      It will respond to "Alexa, tweet status for ATL".
+      Notice, the request.sessionDetails.accessToken - this is the accessToken value that twitter's oauth service returned to us once the user authenticated on twitter's server and was redirected to the client server, which we then sent to the pitangui redirection url. 
+  
+slide 9:
+We will use the 'twit' nodejs open source library to make the work for making the api request easier. The twitter helper we wrap it in will require a consumer key and secret from twitter as well as the access token and access token secret. the access token and access token secret are the request.sessionDetails.accessToken value. The consumer key and consumer secret are values we got from registering a new app with twitter available for authorization.
+
+slide 10:
+Finally the twitter helper can make a tweet using the twit library's client.post method. 

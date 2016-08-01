@@ -1,0 +1,65 @@
+lecture 3:
+
+slide 1:
+Students will build the Airport Info skill in this chapter which will make requests to a json api and speak the results.
+They will use an utterances definition as before, but will add a slot to their utterance definition to pass data into the service.
+
+slide 2:
+In this chapter students construct a more complicated skill Madlibbuilder, that showcases
+VUI (Voice User Interface) design best practices and teaches about managing session state for a skill.
+The Madlibbuilder skill allows users to submit adjectives, adverbs and so forth to complete a madlib, which is then read back after all steps are complete, often with hilarious results! The workflow is step-based which allows students to complete all of the steps for the madlib one at a time.
+In the first diagram, a user begins the madlib skill and selects a madlib type as requested by the skill.
+She then provides a series of words as replies to Madlib Builder's prompts.
+Each step will subsequently change the prompt until the Madlib is complete.
+Specifically we will be building a skill that deals with a long running series of steps. In order to persist the data
+beyond the scope of one prompt, we will use session to keep data alive. 
+We will design a contextual help system that guides users when they are confused to minimize them getting lost in our more complicated skill. 
+We will also consider ways we can keep the interaction focused, concise, and clear by giving an overview of the VUI guidelines from Amazon.
+
+slide 3:
+The Madlib skill also implements contextual help to guide users who may have forgotten what an adverb or adjective is. 
+If they ask for help they'll receive it, specific to the current step that they are on. 
+
+slide 4:
+The interaction continues until all of the required steps have been completed for the Madlib. 
+When the Builder reaches the end, the Madlib is read back.
+
+slide 5:
+After completing the madlib, the skill should also send an alexa skill "card" to the companion http://alexa.amazon.com/#cards website containing the user's completed madlib.
+A card is a ui element available in the companion alexa app that can be used to preserve text after the skill has completed so that users can look back at it. 
+
+slide 6:
+In the next slides we will talk about some guiding principles for building simple VUIs (Voice User Interfaces) that are easy for users to navigate, and we think about designing a VUI to represent the Madlib builder skill's input and output needs.
+
+slide 7:
+The diagram shows the data flow for Madlib Builder.
+First, a selection for a madlib is made. 
+Next, the user specifies words for each step of the madlib. 
+After completing the madlib, the madlib is played back and the madlib is sent to the user's companion app. 
+The companion app is the http://alexa.amazon.com/#cards website. 
+The madlib is displayed on a "card", an element that can be displayed in the companion app. 
+We show in code how to send a card in this chapter.
+We will start to think about how we can best define the interaction for the dataflow in terms of the VUI. 
+Before we can begin doing this we should introduce some VUI terminology. 
+
+slide 7:
+The invocation types are the different ways a request can be handled by the system. 
+Each invocation type will be explained in detail in the following slides.
+
+slide 8:
+A full intent contains all the info needed to successfully complete the user's request. 
+For example, the Invocation Type "Alexa, ask Hello Alexa to Say Hello." includes enough information to complete the request. 
+A request for an intent that includes slots will include all of the values or a request for an intent that contains no slots is considered a Full Intent. 
+
+slide 9:
+A partial intent has some but not all of the info. 
+For example, with Madlibs, a number of additional pieces of info are required before the madlib intent can read back the Madlib. 
+With each step the Partial Intent request will build up the data until it has all of the information needed to read back the complete MadLib.
+
+slide 10:
+In this slide we show verifying the invocation and checking to see if it's a partial or full intent. 
+In the case where the AIRPORTCODE slot is empty, it means the request invocation is a partial one. 
+The user must be reprompted for the invocation to be a Full Intent.
+Without the verification, a user could ask for an intent that lacked the info required. 
+Checking the slot is empty and reprompting with an indication the value was missing will let the user know he must provide the value in order to continue    
+

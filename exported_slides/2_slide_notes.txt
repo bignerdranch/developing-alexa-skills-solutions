@@ -1,0 +1,45 @@
+lecture 2: 
+
+slide 1:
+Students will build the Airport Info skill in this chapter which will make requests to a json api and speak the results.  They will use an utterances definition as before, but will add a slot to their utterance definition to pass data into the service.
+
+slide 2: 
+Utterance definitions resolve spoken words to intents. The definition is added to the online skill interface.
+The user's utterance is compared to a set of example utterance definitions registered in the alexa skill interface.
+
+slide 3:
+The utterance is compared to a set of example utterance definitions registered in the alexa skill interface.
+These definitions in turn are used to match a user's words to an intent and put their words in a slot so that it can be used in an intent handler.
+
+slide 4:
+The skill interface also puts applicable words into a "slot" so that they can be used as parameters in a program. 
+A slot takes a spoken word and maps it into a variable that is then retrieved in the intent handler in the skill service.
+Slots are specified in the utterance samples that are configured in the skill interface. 
+
+slide 5:
+The intent schema is where you define the slots that can be used in an utterance and their type
+and list the intents that the skill service implements.
+The intent schema is registered in the skill interface at the skill configuration step on Amazon's Alexa skill portal.
+Here we defined a slot called AIRPORTCODE with a type of FAACODES.
+
+slide  6: 
+When you define slot, you specify json that describes the intent the slot is a part of. 
+
+slide 7:
+The slot type determines which values a user's spoken utterances that match a slot's position can be resolved to.
+A slot type is a list of targets a sound could possibly be, and the skill interface resolves the sound to the closest match in the list.
+The types above are amazon provided types which should be available for any slot type definition. 
+
+slide 8:
+A custom slot type resolves a user's spoken words to a list of words you provide to indicate to the NLU what possible matches can be. In the Airport Info skill example, we will define a list of airport codes that the NLU can resolve a user's spoken words to. 
+
+slide 9:
+Amazon provides us with some standard slot types, but sometimes you will want to make your own. Custom slot types really make the Echo a move more organic and lively platform.
+Amazon has provided developers with an interface to make custom slot types.
+A custom slot is used anytime user input is required that does not belong to the Amazon provided slot types.
+You specify a list of possible values and the data type name in the skill interface. 
+Then, the new type is available as to be associated in the Intent Schema.
+
+slide 10:
+Reading the slot value in the intent gives access to the value that mapped to it. 
+This is done in the intent handler defintion, in the skill service.

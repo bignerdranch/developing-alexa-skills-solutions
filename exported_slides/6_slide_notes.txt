@@ -1,0 +1,76 @@
+lecture 6
+
+slide 1:
+When publishing a skill, the Publishing Information and Privacy &amp; Compliance steps need to be completed. 
+The information configured on this screen will be shown on the installation card for the skill in the alexa app skills tab. 
+Three phrases need to be provided that show users how to interact with the skill. 
+Also required for submission are an icon, category, keywords for searching for the skill in the alexa app skills tab, and short and
+full descriptions detailing the skill's functionality. 
+
+slide 2:
+Next, privacy and compliance details need to be provided in order to move forward with submitting a skill. 
+
+slide 3:
+A common mistake developers sometimes make with the approval process is to leave out the required built-in intent handlers. 
+AMAZON.HelpIntent, AMAZON.CancelIntent, and AMAZON.StopIntent handlers are all required. The skill will be rejected if these handlers are not part of the skill. Remember the Slot Types and Utterances lecture - built-in intents must be specified in the intent schema for them to be received by the skill service and also must be handled, even though they are considered "built-in". All this means is that the intent's example utterances are provided by amazon automatically. 
+
+slide 4:
+Can anyone tell me why the code on this slide would result in the skill  being rejected from the alexa app skills tab? 
+The problem is how the "stream" from the server to the skill is being managed. 
+The bolded area shows the skill reprompting and continuing the session, but the skill instead should have closed the stream because the skill has responded to the users request with a statement. It also should not have reprompted, because the answer has been delivered to the user.
+
+slide 5:
+The easiest solution for hosting a Skill Service is AWS Lambda.
+If you need to host your skill on your own servers, it's required that you meet Amazon's security requirement for
+hosting the skill in an approved manner.
+The skill must implement SSL, and the certificate on the server must be from an Amazon approved authority.
+
+slide 6:
+Other reasons for a skill being rejected include skills targeting children, profanity, or explicit or inappropriate content.
+
+slide 7:
+In the next section we will explore how to put unit tests around the Airport Info skill we wrote earlier.
+We will be able to make assertions about the skill that we wrote and verify it's behavior - before we deploy to
+lambda. 
+Having good unit tests is a must, especially when your skill becomes more complicated. 
+
+slide 8:
+In the Node.js ecosystem, there are a vast number of tools that support testing a Node.js application. 
+We will look at two of the most popular, mocha and chai. 
+Mocha is a test framework. 
+Chai is an assertion library.
+If you have done ruby on rails or java development, these tools are very similar in style to Rspec or Junit and AssertJ. 
+If you haven't done rspec or assertJ before, don't worry - the syntax is very easy to pick up. 
+
+slide 9:
+In this slide we define the what we are testing - the FAADataHelper. 
+Next, we define the particular method we would like to test, using the describe method. 
+Finally, we define the context or state we want to test getAirportStatus with. 
+In this case, we would like to test the state where the airport code we give to the program is an invalid one. 
+What should we expect when an invalid state is passed into the getAirportStatus method?
+The test should pass if passing in an invalid airportcode results in an error.
+
+slide 10:
+The test that we just wrote can now be run from the terminal by using the mocha command from the project directory. The mocha test runner will automatically look for a test directory and will execute all of the test files in that directory. 
+Notice how the describe and context definitions in the test translate into a very human readable test output?
+This is one of the strengths of using mocha and chai to write tests with - if the tests are written well,it is easy to track down the failures because it is like reading a well-formed sentence describing the behavior.
+
+slide 11:
+Chai also supports handling the problem of tests that may execute asynchronously.
+Rather than have to implement logic for waiting for the response or using callbacks to handle the issue, 
+the assertion library can handle the problem for us. 
+
+slide 12:
+Chai allows you to load in modules of functionality using the use function. Once such module, chaiAsPromised, 
+adds an "eventually" matcher to the chai assertions, and will convert async methods to synchronous ones so that is possible to make assertions about their state. 
+
+slide 13:
+For a more complete example of how tests are written using mocha and chai, check out the code examples 
+listed in https://github.com/bignerdranch/alexa-airportinfo. 
+
+slide 14:
+SSML enables additional capabilities for pronunciation of words and phonemes ASK. 
+In the slide, you can see one example of instructing Alexa to pronounce the same word in two different ways via the International Phonetic Alphabet grammar. 
+You can use either IPA (International Phonetic Alphabet) or x-sampa (The Extended Speech Assessment Methods Phonetic Alphabet) to provide the pronunciation you would like. 
+
+Audio can be up to 90 seconds total, maximum of 4 audio elements allowed in a response
